@@ -1,0 +1,47 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4 mt-5">
+      <% if (scs.length !==0) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= scs %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+          <h1 class="mb-5 text-center">My VS Comp Game Histories</h1>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No Id</th>
+                <th scope="col">Result</th>
+                <th scope="col">Computer</th>
+                <th scope="col">Player</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% histories.forEach((data, index)=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= index + 1 %>
+                  </th>
+                  <td>
+                    <%= data.result %>
+                  </td>
+                  <td>
+                    <%= data.computer %>
+                  </td>
+                  <td>
+                    <%= data.player %>
+                  </td>
+                  <td class="text-center"><span>
+                      <!-- SHOW -->
+                      <button type="button" class="action"><a href="/history/<%= data.id %>">
+                          <i class="fa-regular fa-pen-to-square"></i></a>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+    </div>
+  </main>

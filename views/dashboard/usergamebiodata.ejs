@@ -1,0 +1,242 @@
+<% if (user.isAdmin==true) { %>
+
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-4 mt-5">
+        <% if (typeof errors !='undefined' ) { %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <ul>
+              <% errors.forEach(error=> { %>
+                <li>
+                  <%= error.msg %>
+                </li>
+                <% }) %>
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% } %>
+            <% if (scs.length !==0) { %>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= scs %>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <% } %>
+                <% if (err.length !==0) { %>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= err %>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <% } %>
+
+                    <h1 class="mb-3 text-center">My Biodata
+                      <br>
+                      <h5 class="mb-3 text-center">Admin</h5>
+                    </h1>
+
+                    <table class="table table-hover table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">No Id</th>
+                          <th scope="col">No User Id</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">About</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% bioDatas.forEach((data, index)=> { %>
+                          <tr>
+                            <th scope="row">
+                              <%= index + 1 %>
+                            </th>
+                            <td>
+                              <%= data.userId %>
+                            </td>
+                            <td>
+                              <%= data.name %>
+                            </td>
+                            <td>
+                              <%= data.age %>
+                            </td>
+                            <td>
+                              <%= data.address %>
+                            </td>
+                            <td>
+                              <%= data.about %>
+                            <td class="text-center"><span>
+                                <!-- SHOW -->
+                                <button type="button" class="action"> <a href="/biodata/<%= data.id %>">
+                                    <i class="fa-regular fa-pen-to-square"></i></a>
+                                </button>
+                              </span>
+                            </td>
+                          </tr>
+                          </td>
+                          <% }) %>
+                      </tbody>
+                    </table>
+
+                    <!-- CREATE -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
+                      Add Biodata
+                    </button>
+                    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">About Me,</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form method="post" action="/biodata">
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="userId"
+                                  name="userId" required></textarea>
+                                <label for="userId">No User Id</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="name" name="name"
+                                  required></textarea>
+                                <label for="name">Name</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="age" name="age"
+                                  required></textarea>
+                                <label for="age">Age</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="address"
+                                  name="address" required></textarea>
+                                <label for="address">Address</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="about"
+                                  name="about" style="height: 100px"></textarea>
+                                <label for="about">About Me</label>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Data</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      </div>
+    </main>
+
+    <% }else{ %>
+
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4 mt-5">
+            <% if (typeof errors !='undefined' ) { %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul>
+                  <% errors.forEach(error=> { %>
+                    <li>
+                      <%= error.msg %>
+                    </li>
+                    <% }) %>
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <% } %>
+                <% if (scs.length !==0) { %>
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= scs %>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <% } %>
+
+                    <h1 class="mb-5 text-center">My Biodata</h1>
+
+                    <table class="table table-hover table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">No Id</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">About</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% bioDatas.forEach((data, index)=> { %>
+                          <tr>
+                            <th scope="row">
+                              <%= index + 1 %>
+                            </th>
+                            <td>
+                              <%= data.name %>
+                            </td>
+                            <td>
+                              <%= data.age %>
+                            </td>
+                            <td>
+                              <%= data.address %>
+                            </td>
+                            <td>
+                              <%= data.about %>
+                            <td class="text-center"><span>
+                                <!-- SHOW -->
+                                <button type="button" class="action"> <a href="/biodata/<%= data.id %>">
+                                    <i class="fa-regular fa-pen-to-square"></i></a>
+                                </button>
+                              </span>
+                            </td>
+                          </tr>
+                          </td>
+                          <% }) %>
+                      </tbody>
+                    </table>
+
+                    <!-- CREATE -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
+                      Add Biodata
+                    </button>
+                    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">About Me,</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form method="post" action="/biodata">
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="name" name="name"
+                                  required></textarea>
+                                <label for="name">Name</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="age" name="age"
+                                  required></textarea>
+                                <label for="age">Age</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="address"
+                                  name="address" required></textarea>
+                                <label for="address">Address</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="about"
+                                  name="about" style="height: 100px"></textarea>
+                                <label for="about">About Me</label>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Data</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+        </main>
+        <% } %>

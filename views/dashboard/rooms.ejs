@@ -1,0 +1,59 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4 mt-5">
+      <% if (scs.length !==0) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= scs %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+          <h1 class="mb-5 text-center">Rooms User Play Multiplayers</h1>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">No Play Id</th>
+                <th scope="col">Room Name</th>
+                <th scope="col">Room Number</th>
+                <th scope="col">User ID 1</th>
+                <th scope="col">User Id 2</th>
+                <th scope="col">Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% plays.forEach((data, index)=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= index + 1 %>
+                  </th>
+                  <td>
+                    <%= data.id %>
+                  </td>
+                  <td>
+                    <%= data.roomName %>
+                  </td>
+                  <td>
+                    <%= data.roomNumber %>
+                  </td>
+                  <td>
+                    <%= data.userId1 %>
+                  </td>
+                  <td>
+                    <%= data.userId2 %>
+                  </td>
+                  <td>
+                    <%= data.createdAt %>
+                  </td>
+                  <td class="text-center"><span>
+                      <!-- SHOW -->
+                      <button type="button" class="action"><a href="/rooms/<%= data.id %>">
+                          <i class="fa-regular fa-pen-to-square"></i></a>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+    </div>
+  </main>

@@ -1,0 +1,55 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4 mt-5">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+          <% if (scs.length !==0) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= scs %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+              <h1 class="mb-5 text-center">
+                Update User Data
+              </h1>
+              <form method="POST" action="/users/<%= history.id %>?_method=PATCH">
+                <div class="form-floating mb-3">
+                  <input class="form-control" placeholder="Leave a comment here" id="email" name="email" required
+                    value="<%= history.email %>"></input>
+                  <label for="email">Email users</label>
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <a href="/users"><button type="button" class="btn btn-secondary"
+                      data-bs-dismiss="modal">Close</button></a>
+                  <button type="submit" style="width: 12rem;" class="btn btn-primary">Change Data</button>
+                  <!-- <button type="button" style="width: 20rem;" class="btn btn-danger mt-4" data-bs-toggle="modal"
+                    data-bs-target="#delete">
+                    DELETE DATA
+                  </button> -->
+                </div>
+              </form>
+              <!-- <form method="POST" action="/users/<%= history.id %>?_method=DELETE">
+                <input type="hidden" name="id">
+                <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deleting User Data</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        You want to delete User data?, <br> Are You Sure?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form> -->
+        </div>
+      </div>
+    </div>
+  </main>

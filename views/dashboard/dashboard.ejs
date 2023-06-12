@@ -1,0 +1,72 @@
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <% if (user.isAdmin==true) { %>
+                <h1 class="mt-4">Welcome Back Admin,</h1>
+                <% }else{ %>
+                    <h1 class="mt-4">Welcome Back,</h1>
+                    <% } %>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">
+                                <%= user.email %>
+                            </li>
+                        </ol>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Petunjuk User Biodata Page
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            1. Penambahan tabel User di lakukan di tampilan awal, klik sign-up untuk
+                                            create
+                                            di tabel
+                                            User<br>
+                                            2. CRUD tabel biodata bisa langsung di lakukan pada navbar samping<br>
+                                            3. Setiap User bisa memiliki banyak biodata
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Petunjuk Admin ID
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            1. Login Dengan Email: asdas@asd.asd, Password: 12345<br>
+                                            2. Atau Registrasi dan rubah isAdmin di database menjadi TRUE<br>
+                                            3. Admin Memiliki tampilan yang berbeda<br>
+                                            4. Admin bisa melihat semua user yang terdaftar dan mengupdatenya<br>
+                                            5. Admin bisa menghapus dan mengubah data permainan (vscomp &
+                                            Multiplayer)<br>
+                                            6. Admin bisa menambah,merubah,dan menghapus semua biodata milik users
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Petunjuk User Game History Page
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            1. Klik "PLAY THE GAME" untuk memulai membuat history (CREATE)<br>
+                                            2. Tabel History dihubungkan dengan game yang menggunakan ajax post ke back
+                                            end
+                                            untuk
+                                            bisa create<br>
+                                            3. History data hanya bisa di "DELETE"<br>
+                                            4. Untuk menambah history game lagi, bisa bermain lagi untuk mengcreate data
+                                            history
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </main>

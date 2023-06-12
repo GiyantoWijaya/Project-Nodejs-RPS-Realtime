@@ -1,0 +1,53 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4 mt-5">
+      <div class="card text-center">
+        <div class="card-header">
+          Your History
+        </div>
+        <div class="card-body">
+          <h1 class="card-title mb-5 mt-5">
+            <%= history.result %>
+          </h1>
+          <p class="card-text">
+            <%= history.computer %>
+          </p>
+          <p class="card-text">
+            <%= history.player %>
+          </p>
+          <a href="/history" class="btn btn-primary">Go Back</a>
+        </div>
+        <div class="card-footer text-muted">
+          <%= history.createdAt %>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" style="width: 20rem;" class="btn btn-danger mt-4" data-bs-toggle="modal"
+          data-bs-target="#delete">
+          DELETE DATA
+        </button>
+      </div>
+      <!-- DELETE HISTORY -->
+      <form method="POST" action="/history/<%= id %>?_method=DELETE">
+        <input type="hidden" name="id">
+        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Deleting Biodata</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                You want to delete your data?, <br> Are You Sure?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete Data</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </main>

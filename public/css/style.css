@@ -1,0 +1,486 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Section 1 */
+#home {
+    background-image: url("../img/home.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 55rem;
+    background-repeat: no-repeat;
+}
+
+#logo {
+    margin-left: 7vw;
+}
+
+/* navbar */
+.navbar {
+    --bs-navbar-nav-link-padding-x: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand,
+.nav-link {
+    font-size: 0.75rem;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+/* HomeContent */
+.home {
+    margin-top: 12%;
+    text-align: center;
+}
+
+.h1home {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 6vw;
+    font-weight: bold;
+    color: aliceblue;
+    letter-spacing: 1vw;
+}
+
+.h2home {
+    color: aliceblue;
+    margin-top: 3rem;
+    font-size: 2vw;
+}
+
+.navbtn {
+    margin-top: 4rem;
+    width: 20%;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-width: 3px;
+    border-color: black;
+}
+
+.thestory {
+    display: block;
+    position: relative;
+    margin-top: 20%;
+    text-decoration: none;
+    color: rgb(68, 100, 128);
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+.thestory:hover {
+    color: rgb(168, 116, 242);
+}
+
+.bi-caret-down {
+    font-size: 2vw;
+    line-height: 0;
+}
+
+
+/* SECTION 2 */
+#thegame {
+    background-image: url("../img/section2.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 55rem;
+    background-repeat: no-repeat;
+}
+
+.thegamecontent {
+    display: flex;
+    height: 55rem;
+    align-items: center;
+}
+
+.h2thegame,
+.h1thegame {
+    color: aliceblue;
+}
+
+.h2thegame {
+    font-size: 1.75vw;
+}
+
+.h1thegame {
+    font-size: 3vw;
+    font-weight: bold;
+    letter-spacing: 0.4vw;
+}
+
+/* Section 3 */
+#features {
+    background-image: url("../img/section3.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 55rem;
+    background-repeat: no-repeat;
+}
+
+.features {
+    height: 45rem;
+    color: black;
+    align-items: center;
+}
+
+.h2features,
+.h1features {
+    font-weight: bold;
+}
+
+.accordion-flush {
+    --bs-accordion-border-color: none;
+}
+
+.accordion-button:not(.collapsed) {
+    opacity: 0.7;
+    color: black;
+    font-weight: bold;
+}
+
+.accordion-button.collapsed {
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+}
+
+.accordion-item {
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* Section 4 */
+#system {
+    background-image: url("../img/section4.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 55rem;
+    background-repeat: no-repeat;
+}
+
+.system {
+    height: 45rem;
+    align-items: center;
+}
+
+.table {
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+td h5 {
+    color: #FFBD00;
+}
+
+/* Section 5 */
+#topscores {
+    background-image: url("../img/section5.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 55rem;
+    background-repeat: no-repeat;
+}
+
+.topscores {
+    height: 55rem;
+    align-items: center;
+}
+
+.h1top,
+.h2top {
+    color: aliceblue;
+}
+
+.card {
+    width: 70%;
+    margin-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: aliceblue;
+}
+
+.satu {
+    margin-left: 5rem;
+}
+
+.tiga {
+    margin-left: 3rem;
+}
+
+.avatar {
+    width: 4em;
+    height: 4em;
+    margin-right: 20px;
+}
+
+.card-title {
+    color: #FFBD00;
+}
+
+.icon {
+    color: #979797;
+}
+
+.info {
+    color: #979797;
+}
+
+/* Section 6 */
+#newsletter {
+    background-image: url("../img/section6.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 65rem;
+    background-repeat: no-repeat;
+}
+
+.newsletter {
+    display: flex;
+    height: 55rem;
+    align-items: center;
+    color: aliceblue;
+}
+
+.input-group {
+    height: 3.5rem;
+    width: 100%;
+}
+
+.btnemail {
+    width: 35%;
+}
+
+.inputemail {
+    margin-right: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #FFBD00;
+    font-size: 1.2rem;
+}
+
+/* FOOTER */
+.navbottom {
+    display: flex;
+    justify-content: end;
+    letter-spacing: 0.25rem;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navlinkbot {
+    font-size: 0.8rem;
+}
+
+.iconfooter1 {
+    margin-left: 4rem;
+}
+
+.iconfooter1,
+.iconfooter2,
+.iconfooter3,
+.iconfooter4 {
+    font-size: 1.3rem;
+}
+
+hr {
+    border-top: 0.1rem solid #ffffff;
+}
+
+.copyright {
+    color: #979797;
+    font-size: 12px;
+}
+
+.underlinenav {
+    display: flex;
+    margin-top: -2.3rem;
+    justify-content: end;
+    align-items: center;
+    color: aliceblue;
+}
+
+/* login */
+.login {
+    height: 33rem;
+    margin-top: 10rem;
+    color: antiquewhite;
+}
+
+/* ERRORS */
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Slab');
+
+.centered {
+    color: aliceblue;
+    height: 43rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* register */
+
+/* MediaQuery */
+
+@media (max-width: 768px) {
+
+    /* SECTION 1 */
+    .h1home {
+        font-size: 36px;
+    }
+
+    .h2home {
+        font-size: 24px;
+    }
+
+    .navbtn {
+        font-size: 12px;
+    }
+
+    /* SECTION 2 */
+    .h2thegame {
+        font-size: 24px;
+    }
+
+    .h1thegame {
+        font-size: 36px;
+    }
+
+    /* SECTION 5 */
+    .h1top {
+        font-size: 24px;
+    }
+
+    .h2top {
+        font-size: 14px;
+    }
+
+    .avatar {
+        width: 1.75em;
+        height: 1.75em;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
+
+    .icon {
+        font-size: 12px;
+    }
+
+    /* SECTION 6 */
+    .navbottom {
+        justify-content: end;
+        letter-spacing: 0.25rem;
+        gap: 1vw;
+        text-align: center;
+    }
+
+    .navlinkbot {
+        font-size: 1.4vw;
+    }
+
+    .iconfooter1 {
+        margin-left: 1rem;
+    }
+
+    .iconfooter1,
+    .iconfooter2,
+    .iconfooter3,
+    .iconfooter4 {
+        font-size: 8px;
+    }
+
+    .copyright {
+        font-size: 5px;
+    }
+
+    .underlinenav {
+        margin-top: -1.75rem;
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    /* SECTION 5 */
+    .h1top {
+        font-size: 24px;
+    }
+
+    .h2top {
+        font-size: 14px;
+    }
+
+    .avatar {
+        width: 2em;
+        height: 2em;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+
+    .info {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .icon {
+        font-size: 14px;
+    }
+
+    /* SECTION 6 */
+    .navbottom {
+        justify-content: end;
+        letter-spacing: 0.25rem;
+        gap: 1.2rem;
+    }
+
+    .navlinkbot {
+        font-size: 12px;
+    }
+
+    .iconfooter1 {
+        margin-left: 2rem;
+    }
+
+    .iconfooter1,
+    .iconfooter2,
+    .iconfooter3,
+    .iconfooter4 {
+        font-size: 18px;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+
+    .underlinenav {
+        margin-top: -2.3rem;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {}
+
+@media (min-width: 1200px) and (max-width: 1400px) {}

@@ -1,0 +1,166 @@
+<% if (user.isAdmin==true) { %>
+
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-4 mt-5">
+        <% if (scs.length !==0) { %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= scs %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% } %>
+            <h1 class="mb-3 text-center">My Multiplayer Game Histories
+              <br>
+              <h5 class="mb-3 text-center">Admin</h5>
+            </h1>
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">No Id</th>
+                  <th scope="col">No Play Id</th>
+                  <th scope="col">No History</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">player1</th>
+                  <th scope="col">Player2</th>
+                </tr>
+                <% if (histories !=undefined) { %>
+              </thead>
+              <tbody>
+                <% histories.forEach((data, index)=> { %>
+                  <tr>
+                    <th scope="row">
+                      <%= index + 1 %>
+                    </th>
+                    <td>
+                      <%= data.playId %>
+                    </td>
+                    <td>
+                      <%= data.noHistory %>
+                    </td>
+                    <td>
+                      <%= data.result %>
+                    </td>
+                    <td>
+                      <%= data.player1 %>
+                    </td>
+                    <td>
+                      <%= data.player2 %>
+                    </td>
+                    <td class="text-center"><span>
+                        <!-- SHOW -->
+                        <button type="button" class="action"><a href="/multiplayerhistory/<%= data.id %>">
+                            <i class="fa-regular fa-pen-to-square"></i></a>
+                        </button>
+                      </span>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+            <% }else{ %>
+              <h1 class="text-center mt-5">Data is Empty!</h1>
+              <% } %>
+                <!-- CREATE -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
+                  Add Multiplayer History
+                </button>
+                <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Multiplayer History</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form method="post" action="/multiplayerhistory">
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="playId" name="playId"
+                              required></textarea>
+                            <label for="playId">Play Id</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="noHistory"
+                              name="noHistory" required></textarea>
+                            <label for="noHistory">No History</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="result" name="result"
+                              required></textarea>
+                            <label for="result">Result</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="player1"
+                              name="player1" required></textarea>
+                            <label for="player1">Player 1</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="player2"
+                              name="player2" style="height: 100px"></textarea>
+                            <label for="player2">player2</label>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Data</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </main>
+
+    <% }else{ %>
+
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4 mt-5">
+            <% if (scs.length !==0) { %>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= scs %>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <% } %>
+                <h1 class="mb-5 text-center">My Multiplayer Game Histories</h1>
+                <table class="table table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">No Id</th>
+                      <th scope="col">Result</th>
+                      <th scope="col">player1</th>
+                      <th scope="col">Player2</th>
+                    </tr>
+                    <% if (histories !=undefined) { %>
+                  </thead>
+                  <tbody>
+                    <% histories.forEach((data, index)=> { %>
+                      <tr>
+                        <th scope="row">
+                          <%= index + 1 %>
+                        </th>
+                        <td>
+                          <%= data.result %>
+                        </td>
+                        <td>
+                          <%= data.player1 %>
+                        </td>
+                        <td>
+                          <%= data.player2 %>
+                        </td>
+                        <td class="text-center"><span>
+                            <!-- SHOW -->
+                            <button type="button" class="action"><a href="/multiplayerhistory/<%= data.id %>">
+                                <i class="fa-regular fa-pen-to-square"></i></a>
+                            </button>
+                          </span>
+                        </td>
+                      </tr>
+                      <% }) %>
+                  </tbody>
+                </table>
+                <% }else{ %>
+                  <h1 class="text-center mt-5">Data is Empty!</h1>
+                  <% } %>
+          </div>
+        </main>
+        <% } %>

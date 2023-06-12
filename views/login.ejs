@@ -1,0 +1,33 @@
+<div class="container login">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+      <% if (msg.length !==0) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+          <% if (scs.length !==0) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= scs %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+              <form method="post" action="/login">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                    required>
+                </div>
+                <div class="mb-5">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+              <a class="nav-link text-center" href="/registration">Don't have an account? Register Now!</a>
+    </div>
+  </div>
+</div>
